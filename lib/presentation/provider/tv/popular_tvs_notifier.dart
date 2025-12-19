@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 class PopularTvsNotifier extends ChangeNotifier {
   final GetPopularTvs getPopularTvs;
 
-  PopularTvsNotifier(this.getPopularTvs);
+  PopularTvsNotifier({required this.getPopularTvs});
 
   RequestState _state = RequestState.Empty;
   RequestState get state => _state;

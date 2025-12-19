@@ -2,8 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/tv.dart';
-import 'package:ditonton/presentation/pages/popular_movies_page.dart';
-import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
+import 'package:ditonton/presentation/pages/tv/airing_today_tvs_page.dart';
+import 'package:ditonton/presentation/pages/tv/on_the_air_tvs_page.dart';
+import 'package:ditonton/presentation/pages/tv/popular_tvs_page.dart';
+import 'package:ditonton/presentation/pages/tv/top_rated_tvs_page.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,11 +21,12 @@ class BodyHomeTv extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsetsGeometry.symmetric(vertical: 16),
-            child: Center(child: Text("Tv Series", style: kHeading5)),
+            child: Center(child: Text("Tv Series", style: kHeading6)),
           ),
-          Text(
-            'Airing Today',
-            style: kHeading5,
+          _buildSubHeading(
+            title: 'Airing Today',
+            onTap: () =>
+                Navigator.pushNamed(context, AiringTodayTvsPage.ROUTE_NAME),
           ),
           Consumer<TvListNotifier>(builder: (context, data, child) {
             final state = data.airingTodayState;
@@ -40,7 +43,7 @@ class BodyHomeTv extends StatelessWidget {
           _buildSubHeading(
             title: 'On The Air',
             onTap: () =>
-                Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
+                Navigator.pushNamed(context, OnTheAirTvsPage.ROUTE_NAME),
           ),
           Consumer<TvListNotifier>(builder: (context, data, child) {
             final state = data.onTheAirTvsState;
@@ -57,7 +60,7 @@ class BodyHomeTv extends StatelessWidget {
           _buildSubHeading(
             title: 'Top Rated',
             onTap: () =>
-                Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
+                Navigator.pushNamed(context, TopRatedTvsPage.ROUTE_NAME),
           ),
           Consumer<TvListNotifier>(builder: (context, data, child) {
             final state = data.topRatedTvsState;
@@ -74,7 +77,7 @@ class BodyHomeTv extends StatelessWidget {
           _buildSubHeading(
             title: 'Popular',
             onTap: () =>
-                Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
+                Navigator.pushNamed(context, PopularTvsPage.ROUTE_NAME),
           ),
           Consumer<TvListNotifier>(builder: (context, data, child) {
             final state = data.popularTvsState;

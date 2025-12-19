@@ -21,7 +21,7 @@ class BodyHomeMovie extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsetsGeometry.symmetric(vertical: 16),
-            child: Center(child: Text("Movies", style: kHeading5)),
+            child: Center(child: Text("Movies", style: kHeading6)),
           ),
           Text(
             'Now Playing',

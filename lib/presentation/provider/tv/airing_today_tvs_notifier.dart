@@ -17,23 +17,20 @@ class AiringTodayTvsNotifier extends ChangeNotifier {
   String _message = '';
   String get message => _message;
 
-  Future<void> fetchTopRatedTvs() async {
+  Future<void> fetchAiringTodayTvs() async {
     _state = RequestState.Loading;
     notifyListeners();
-    print("Logdebug: called");
     final result = await getAiringTodayTvs.execute();
 
     result.fold(
       (failure) {
         _message = failure.message;
         _state = RequestState.Error;
-        print("Logdebug: got error");
         notifyListeners();
       },
       (tvsData) {
         _tvs = tvsData;
         _state = RequestState.Loaded;
-        print("Logdebug: got empty");
         notifyListeners();
       },
     );

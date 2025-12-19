@@ -17,7 +17,7 @@ class OnTheAirTvsNotifier extends ChangeNotifier {
   String _message = '';
   String get message => _message;
 
-  Future<void> fetchTopRatedTvs() async {
+  Future<void> fetchOnTheAirTvs() async {
     _state = RequestState.Loading;
     notifyListeners();
 

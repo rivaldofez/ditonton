@@ -17,9 +17,13 @@ class BodyHomeTv extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+            padding: EdgeInsetsGeometry.symmetric(vertical: 16),
+            child: Center(child: Text("Tv Series", style: kHeading5)),
+          ),
           Text(
             'Airing Today',
-            style: kHeading6,
+            style: kHeading5,
           ),
           Consumer<TvListNotifier>(builder: (context, data, child) {
             final state = data.airingTodayState;

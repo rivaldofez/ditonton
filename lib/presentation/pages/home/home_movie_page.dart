@@ -62,7 +62,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.tv),
+              leading: Icon(Icons.tv_rounded),
               title: Text('Tv Series'),
               onTap: () {
                 context.read<HomeNotifier>().setCurrentFilmType(FilmType.Tv);

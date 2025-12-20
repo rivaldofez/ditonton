@@ -1,6 +1,8 @@
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/utils.dart';
+import 'package:ditonton/domain/entities/tv_detail.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
+import 'package:ditonton/presentation/pages/detail/tv_detail_page.dart';
 import 'package:ditonton/presentation/pages/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/home/home_movie_page.dart';
 import 'package:ditonton/presentation/pages/popular_movies_page.dart';
@@ -20,7 +22,9 @@ import 'package:ditonton/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/airing_today_tvs_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/on_the_air_tvs_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/popular_tvs_notifier.dart';
+import 'package:ditonton/presentation/provider/tv/tv_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
+import 'package:ditonton/presentation/provider/tv/tv_search_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +67,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
             create: (_) => di.locator<TopRatedMoviesNotifier>()),
         ChangeNotifierProvider(create: (_) => di.locator<TvListNotifier>()),
+        ChangeNotifierProvider(create: (_) => di.locator<TvDetailNotifier>()),
+        ChangeNotifierProvider(create: (_) => di.locator<TvSearchNotifier>()),
         ChangeNotifierProvider(create: (_) => di.locator<HomeNotifier>()),
       ],
       child: MaterialApp(
@@ -103,6 +109,14 @@ class MyApp extends StatelessWidget {
                 builder: (_) => MovieDetailPage(id: id),
                 settings: settings,
               );
+
+            case TvDetailPage.ROUTE_NAME:
+              final id = settings.arguments as int;
+              return MaterialPageRoute(
+                builder: (_) => TvDetailPage(id: id),
+                settings: settings,
+              );
+
             case SearchPage.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => SearchPage());
             case WatchlistMoviesPage.ROUTE_NAME:

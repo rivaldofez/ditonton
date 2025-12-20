@@ -120,8 +120,7 @@ class DatabaseHelper {
 
   Future<List<Map<String, dynamic>>> getWatchlistTvs() async {
     final db = await database;
-    final List<Map<String, dynamic>> results =
-        await db!.query(_tblMovieWatchlist);
+    final List<Map<String, dynamic>> results = await db!.query(_tblTvWatchlist);
 
     return results;
   }

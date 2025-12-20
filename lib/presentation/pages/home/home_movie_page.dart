@@ -2,6 +2,7 @@ import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/home/body_home_movie.dart';
 import 'package:ditonton/presentation/pages/home/body_home_tv.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
+import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/provider/home_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
@@ -91,7 +92,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
+              if (context.read<HomeNotifier>().currentFilmType ==
+                  FilmType.Movie) {
+                Navigator.pushNamed(context, SearchMoviePage.ROUTE_NAME);
+              } else {
+                Navigator.pushNamed(context, SearchTvPage.ROUTE_NAME);
+              }
             },
             icon: Icon(Icons.search),
           )

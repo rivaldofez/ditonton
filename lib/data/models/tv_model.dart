@@ -9,7 +9,7 @@ String tvModelToJson(TvModel data) => json.encode(data.toJson());
 
 class TvModel extends Equatable {
   final bool adult;
-  final String backdropPath;
+  final String? backdropPath;
   final List<int> genreIds;
   final int id;
   final List<String> originCountry;

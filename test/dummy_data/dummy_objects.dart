@@ -121,8 +121,9 @@ final testMovieMap = {
 };
 
 final testTvMap = {
-  'id': 1,
-  'overview': 'overview',
-  'posterPath': 'posterPath',
-  'name': 'name'
+  'id': 82452,
+  'overview':
+      'A young boy known as the Avatar must master the four elemental powers to save a world at war — and fight a ruthless enemy bent on stopping him.',
+  'posterPath': '/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg',
+  'name': 'Avatar the Last Airbender'
 };

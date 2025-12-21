@@ -1,0 +1,28 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/ckPbbcJOcL43mJBrROTMrtOBIYK.jpg",
+            "genre_ids": [
+                18,
+                10759
+            ],
+            "id": 240459,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Spartacus: House of Ashur",
+            "overview": "In a world where he survived the events of Spartacus (2010), Ashur clawed his way to power, owning the same ludus that once owned him. Allying with a fierce gladiatrix, Ashur ignites a new kind of spectacle that offends the elite.",
+            "popularity": 149.7655,
+            "poster_path": "/vNByuzy60v31nmUVPMA8oAtneUK.jpg",
+            "first_air_date": "2025-12-05",
+            "name": "Spartacus: House of Ashur",
+            "vote_average": 6.298,
+            "vote_count": 84
+        }
+    ],
+    "total_pages": 52,
+    "total_results": 1022
+}

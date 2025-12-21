@@ -1,0 +1,23 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "backdropPath",
+            "genre_ids": [1, 2, 3],
+            "id": 1,
+            "origin_country": ["en"],
+            "original_language": "originalLanguage",
+            "original_name": "originalName",
+            "overview": "overview",
+            "popularity": 1,
+            "poster_path": "posterPath",
+            "first_air_date": "firstAirDate",
+            "name": "name",
+            "vote_average": 1,
+            "vote_count": 1
+          }
+    ],
+    "total_pages": 12,
+    "total_results": 226
+}

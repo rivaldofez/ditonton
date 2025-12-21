@@ -1,0 +1,29 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/8zbAoryWbtH0DKdev8abFAjdufy.jpg",
+            "genre_ids": [
+                10765,
+                9648,
+                10759
+            ],
+            "id": 66732,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Stranger Things",
+            "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+            "popularity": 516.6742,
+            "poster_path": "/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+            "first_air_date": "2016-07-15",
+            "name": "Stranger Things",
+            "vote_average": 8.598,
+            "vote_count": 19593
+        }
+    ],
+    "total_pages": 10556,
+    "total_results": 211116
+}

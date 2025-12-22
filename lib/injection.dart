@@ -28,6 +28,8 @@ import 'package:ditonton/domain/usecases/tv/get_watchlist_tvs.dart';
 import 'package:ditonton/domain/usecases/tv/remove_tv_watchlist.dart';
 import 'package:ditonton/domain/usecases/tv/save_tv_watchlist.dart';
 import 'package:ditonton/domain/usecases/tv/search_tvs.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_search_bloc.dart';
 import 'package:ditonton/presentation/provider/home_notifier.dart';
 import 'package:ditonton/presentation/provider/movie/movie_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/movie/movie_list_notifier.dart';
@@ -49,6 +51,10 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.instance;
 
 void init() {
+  //bloc
+  locator.registerFactory(() => MovieSearchBloc(locator()));
+  locator.registerFactory(() => TvSearchBloc(locator()));
+
   // provider
   locator.registerFactory(
     () => MovieListNotifier(

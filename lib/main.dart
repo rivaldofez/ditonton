@@ -1,6 +1,8 @@
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/utils.dart';
 import 'package:ditonton/domain/entities/tv_detail.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_search_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/detail/tv_detail_page.dart';
 import 'package:ditonton/presentation/pages/movie/movie_detail_page.dart';
@@ -31,6 +33,7 @@ import 'package:ditonton/presentation/provider/tv/watchlist_tv_notifier.dart';
 import 'package:ditonton/presentation/provider/movie/watchlist_movie_notifier.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:ditonton/injection.dart' as di;
 
@@ -76,6 +79,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => di.locator<TvDetailNotifier>()),
         ChangeNotifierProvider(create: (_) => di.locator<TvSearchNotifier>()),
         ChangeNotifierProvider(create: (_) => di.locator<HomeNotifier>()),
+        BlocProvider(create: (_) => di.locator<MovieSearchBloc>()),
+        BlocProvider(create: (_) => di.locator<TvSearchBloc>()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

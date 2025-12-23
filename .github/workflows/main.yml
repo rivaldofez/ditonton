@@ -1,4 +1,4 @@
-name: Flutter Unit Tests
+name: Flutter CI
 
 on:
   push:
@@ -6,18 +6,21 @@ on:
       - main
 
 jobs:
-  test:
+  flutter-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Flutter
+      - name: Set up Flutter (Stable)
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "stable"
+          channel: stable
           cache: true
+
+      - name: Verify Flutter installation
+        run: flutter --version
 
       - name: Install dependencies
         run: flutter pub get

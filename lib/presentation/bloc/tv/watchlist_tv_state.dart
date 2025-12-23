@@ -14,7 +14,7 @@ class WatchlistTvLoading extends WatchlistTvState {}
 class WatchlistTvError extends WatchlistTvState {
   final String message;
 
-  WatchlistTvError(this.message);
+  const WatchlistTvError(this.message);
 
   @override
   List<Object> get props => [message];
@@ -23,7 +23,7 @@ class WatchlistTvError extends WatchlistTvState {
 class WatchlistTvHasData extends WatchlistTvState {
   final List<Tv> result;
 
-  WatchlistTvHasData(this.result);
+  const WatchlistTvHasData(this.result);
 
   @override
   List<Object> get props => [result];

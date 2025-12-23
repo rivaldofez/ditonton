@@ -9,6 +9,7 @@ TvDetailResponse tvDetailResponseFromJson(String str) =>
 String tvDetailResponseToJson(TvDetailResponse data) =>
     json.encode(data.toJson());
 
+// ignore: must_be_immutable
 class TvDetailResponse extends Equatable {
   bool adult;
   String backdropPath;

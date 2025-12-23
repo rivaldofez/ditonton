@@ -1,8 +1,12 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:ditonton/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
   static const ROUTE_NAME = '/about';
+
+  const AboutPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

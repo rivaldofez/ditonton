@@ -1,5 +1,7 @@
-import 'package:bloc/bloc.dart';
+// ignore_for_file: constant_identifier_names
+
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_this
+
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:equatable/equatable.dart';
 

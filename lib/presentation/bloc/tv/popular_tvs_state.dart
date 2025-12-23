@@ -14,7 +14,7 @@ class PopularTvsLoading extends PopularTvsState {}
 class PopularTvsError extends PopularTvsState {
   final String message;
 
-  PopularTvsError(this.message);
+  const PopularTvsError(this.message);
 
   @override
   List<Object> get props => [message];
@@ -23,7 +23,7 @@ class PopularTvsError extends PopularTvsState {
 class PopularTvsHasData extends PopularTvsState {
   final List<Tv> result;
 
-  PopularTvsHasData(this.result);
+  const PopularTvsHasData(this.result);
 
   @override
   List<Object> get props => [result];

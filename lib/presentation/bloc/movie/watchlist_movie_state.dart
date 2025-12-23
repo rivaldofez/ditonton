@@ -14,7 +14,7 @@ class WatchlistMovieLoading extends WatchlistMovieState {}
 class WatchlistMovieError extends WatchlistMovieState {
   final String message;
 
-  WatchlistMovieError(this.message);
+  const WatchlistMovieError(this.message);
 
   @override
   List<Object> get props => [message];
@@ -23,7 +23,7 @@ class WatchlistMovieError extends WatchlistMovieState {
 class WatchlistMovieHasData extends WatchlistMovieState {
   final List<Movie> result;
 
-  WatchlistMovieHasData(this.result);
+  const WatchlistMovieHasData(this.result);
 
   @override
   List<Object> get props => [result];

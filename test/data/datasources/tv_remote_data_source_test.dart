@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert';
 
 import 'package:ditonton/data/datasources/tv_remote_data_source.dart';

@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:ditonton/domain/usecases/search_movies.dart';
 import 'package:equatable/equatable.dart';
@@ -12,7 +12,7 @@ class MovieSearchBloc extends Bloc<MovieSearchEvent, MovieSearchState> {
 
   MovieSearchBloc(this._searchMovies) : super(MovieSearchEmpty()) {
     on<OnQueryChanged>((event, emit) async {
-      final query = await event.query;
+      final query = event.query;
 
       emit(MovieSearchLoading());
       final result = await _searchMovies.execute(query);

@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ditonton/domain/entities/tv.dart';
 import 'package:ditonton/domain/usecases/tv/search_tvs.dart';
 import 'package:equatable/equatable.dart';
@@ -12,7 +12,7 @@ class TvSearchBloc extends Bloc<TvSearchEvent, TvSearchState> {
 
   TvSearchBloc(this._searchTvs) : super(TvSearchEmpty()) {
     on<OnQueryChanged>((event, emit) async {
-      final query = await event.query;
+      final query = event.query;
 
       emit(TvSearchLoading());
       final result = await _searchTvs.execute(query);

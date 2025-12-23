@@ -14,7 +14,7 @@ class TopRatedTvsLoading extends TopRatedTvsState {}
 class TopRatedTvsError extends TopRatedTvsState {
   final String message;
 
-  TopRatedTvsError(this.message);
+  const TopRatedTvsError(this.message);
 
   @override
   List<Object> get props => [message];
@@ -23,7 +23,7 @@ class TopRatedTvsError extends TopRatedTvsState {
 class TopRatedTvsHasData extends TopRatedTvsState {
   final List<Tv> result;
 
-  TopRatedTvsHasData(this.result);
+  const TopRatedTvsHasData(this.result);
 
   @override
   List<Object> get props => [result];

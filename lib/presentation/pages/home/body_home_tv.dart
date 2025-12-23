@@ -2,14 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/tv.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list_bloc.dart';
 import 'package:ditonton/presentation/pages/detail/tv_detail_page.dart';
 import 'package:ditonton/presentation/pages/tv/airing_today_tvs_page.dart';
 import 'package:ditonton/presentation/pages/tv/on_the_air_tvs_page.dart';
 import 'package:ditonton/presentation/pages/tv/popular_tvs_page.dart';
 import 'package:ditonton/presentation/pages/tv/top_rated_tvs_page.dart';
-import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BodyHomeTv extends StatelessWidget {
   const BodyHomeTv({Key? key}) : super(key: key);
@@ -29,14 +29,13 @@ class BodyHomeTv extends StatelessWidget {
             onTap: () =>
                 Navigator.pushNamed(context, AiringTodayTvsPage.ROUTE_NAME),
           ),
-          Consumer<TvListNotifier>(builder: (context, data, child) {
-            final state = data.airingTodayState;
-            if (state == RequestState.Loading) {
+          BlocBuilder<TvListBloc, TvListState>(builder: (context, state) {
+            if (state.airingTodayState == RequestState.Loading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state == RequestState.Loaded) {
-              return TvList(data.airingTodayTvs);
+            } else if (state.airingTodayState == RequestState.Loaded) {
+              return TvList(state.airingTodayTvs);
             } else {
               return Text('Failed');
             }
@@ -46,14 +45,13 @@ class BodyHomeTv extends StatelessWidget {
             onTap: () =>
                 Navigator.pushNamed(context, OnTheAirTvsPage.ROUTE_NAME),
           ),
-          Consumer<TvListNotifier>(builder: (context, data, child) {
-            final state = data.onTheAirTvsState;
-            if (state == RequestState.Loading) {
+          BlocBuilder<TvListBloc, TvListState>(builder: (context, state) {
+            if (state.onTheAirState == RequestState.Loading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state == RequestState.Loaded) {
-              return TvList(data.onTheAirTvs);
+            } else if (state.onTheAirState == RequestState.Loaded) {
+              return TvList(state.onTheAirTvs);
             } else {
               return Text('Failed');
             }
@@ -63,14 +61,13 @@ class BodyHomeTv extends StatelessWidget {
             onTap: () =>
                 Navigator.pushNamed(context, TopRatedTvsPage.ROUTE_NAME),
           ),
-          Consumer<TvListNotifier>(builder: (context, data, child) {
-            final state = data.topRatedTvsState;
-            if (state == RequestState.Loading) {
+          BlocBuilder<TvListBloc, TvListState>(builder: (context, state) {
+            if (state.topRatedTvsState == RequestState.Loading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state == RequestState.Loaded) {
-              return TvList(data.topRatedTvs);
+            } else if (state.topRatedTvsState == RequestState.Loaded) {
+              return TvList(state.topRatedTvs);
             } else {
               return Text('Failed');
             }
@@ -80,14 +77,13 @@ class BodyHomeTv extends StatelessWidget {
             onTap: () =>
                 Navigator.pushNamed(context, PopularTvsPage.ROUTE_NAME),
           ),
-          Consumer<TvListNotifier>(builder: (context, data, child) {
-            final state = data.popularTvsState;
-            if (state == RequestState.Loading) {
+          BlocBuilder<TvListBloc, TvListState>(builder: (context, state) {
+            if (state.popularTvsState == RequestState.Loading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state == RequestState.Loaded) {
-              return TvList(data.popularTvs);
+            } else if (state.popularTvsState == RequestState.Loaded) {
+              return TvList(state.popularTvs);
             } else {
               return Text('Failed');
             }

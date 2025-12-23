@@ -5,6 +5,7 @@ import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_list_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_search_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_detail_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_search_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/detail/tv_detail_page.dart';
@@ -87,6 +88,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => di.locator<MovieDetailBloc>()),
         BlocProvider(create: (_) => di.locator<TvDetailBloc>()),
         BlocProvider(create: (_) => di.locator<MovieListBloc>()),
+        BlocProvider(create: (_) => di.locator<TvListBloc>()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

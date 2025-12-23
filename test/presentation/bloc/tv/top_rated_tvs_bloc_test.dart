@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../provider/tv/top_rated_tvs_notifier_test.mocks.dart';
+import 'top_rated_tvs_bloc_test.mocks.dart';
 
 @GenerateMocks([GetTopRatedTvs])
 void main() {

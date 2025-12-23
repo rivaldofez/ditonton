@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../provider/tv/watchlist_tv_notifier_test.mocks.dart';
+import 'watchlist_tv_bloc_test.mocks.dart';
 
 @GenerateMocks([GetWatchlistTvs])
 void main() {

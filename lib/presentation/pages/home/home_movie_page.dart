@@ -1,3 +1,4 @@
+import 'package:ditonton/presentation/bloc/home_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_list_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_list_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
@@ -7,8 +8,8 @@ import 'package:ditonton/presentation/pages/movie/search_movie_page.dart';
 import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/watchlist_tvs_page.dart';
 import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
-import 'package:ditonton/presentation/provider/home_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class HomeMoviePage extends StatefulWidget {
@@ -54,7 +55,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               leading: Icon(Icons.movie),
               title: Text('Movies'),
               onTap: () {
-                context.read<HomeNotifier>().setCurrentFilmType(FilmType.Movie);
+                context.read<HomeBloc>().add(SetFilmType(FilmType.Movie));
                 Navigator.pop(context);
               },
             ),
@@ -62,7 +63,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               leading: Icon(Icons.tv_rounded),
               title: Text('Tv Series'),
               onTap: () {
-                context.read<HomeNotifier>().setCurrentFilmType(FilmType.Tv);
+                context.read<HomeBloc>().add(SetFilmType(FilmType.Tv));
                 Navigator.pop(context);
               },
             ),
@@ -95,7 +96,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         actions: [
           IconButton(
             onPressed: () {
-              if (context.read<HomeNotifier>().currentFilmType ==
+              if (context.read<HomeBloc>().state.currentFilmType ==
                   FilmType.Movie) {
                 Navigator.pushNamed(context, SearchMoviePage.ROUTE_NAME);
               } else {
@@ -108,9 +109,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
       ),
       body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Consumer<HomeNotifier>(
-            builder: (context, home, _) {
-              switch (home.currentFilmType) {
+          child: BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              switch (state.currentFilmType) {
                 case FilmType.Tv:
                   return const BodyHomeTv();
 

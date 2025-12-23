@@ -13,10 +13,10 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../dummy_data/dummy_objects.dart';
-import '../../provider/tv/airing_today_tvs_notifier_test.mocks.dart';
-import '../../provider/tv/on_the_air_tvs_notifier_test.mocks.dart';
-import '../../provider/tv/popular_tvs_notifier_test.mocks.dart';
-import '../../provider/tv/top_rated_tvs_notifier_test.mocks.dart';
+import 'airing_today_tvs_bloc_test.mocks.dart';
+import 'on_the_air_tvs_bloc_test.mocks.dart';
+import 'popular_tvs_bloc_test.mocks.dart';
+import 'top_rated_tvs_bloc_test.mocks.dart';
 
 @GenerateMocks([
   GetAiringTodayTvs,
@@ -51,9 +51,6 @@ void main() {
 
   final testTvList = <Tv>[testTv];
 
-  /// --------------------
-  /// AIRING TODAY
-  /// --------------------
   blocTest<TvListBloc, TvListState>(
     'emits Loading → Loaded when airing today TVs succeed',
     build: () {
@@ -88,9 +85,6 @@ void main() {
     ],
   );
 
-  /// --------------------
-  /// ON THE AIR
-  /// --------------------
   blocTest<TvListBloc, TvListState>(
     'emits Loading → Loaded when on the air TVs succeed',
     build: () {
@@ -108,9 +102,6 @@ void main() {
     ],
   );
 
-  /// --------------------
-  /// POPULAR
-  /// --------------------
   blocTest<TvListBloc, TvListState>(
     'emits Loading → Loaded when popular TVs succeed',
     build: () {
@@ -128,9 +119,6 @@ void main() {
     ],
   );
 
-  /// --------------------
-  /// TOP RATED
-  /// --------------------
   blocTest<TvListBloc, TvListState>(
     'emits Loading → Loaded when top rated TVs succeed',
     build: () {

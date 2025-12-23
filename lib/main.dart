@@ -1,7 +1,9 @@
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/utils.dart';
 import 'package:ditonton/domain/entities/tv_detail.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_detail_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_search_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/detail/tv_detail_page.dart';
@@ -81,6 +83,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => di.locator<HomeNotifier>()),
         BlocProvider(create: (_) => di.locator<MovieSearchBloc>()),
         BlocProvider(create: (_) => di.locator<TvSearchBloc>()),
+        BlocProvider(create: (_) => di.locator<MovieDetailBloc>()),
+        BlocProvider(create: (_) => di.locator<TvDetailBloc>()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

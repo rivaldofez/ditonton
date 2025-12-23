@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077140162189",
+    "project_id": "twitter-60441",
+    "storage_bucket": "twitter-60441.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077140162189:android:49e7a7763152548b9d84c4",
+        "android_client_info": {
+          "package_name": "com.example.ditonton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ldSkjAyVwcmhYM-btatDOWhQZAOEsoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

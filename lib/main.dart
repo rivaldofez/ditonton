@@ -6,9 +6,14 @@ import 'package:ditonton/presentation/bloc/movie/movie_search_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/popular_movies_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/top_rated_movies_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/watchlist_movie_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/airing_today_tvs_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/on_the_air_tvs_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/popular_tvs_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/top_rated_tvs_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_detail_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_list_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/watchlist_tv_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/detail/tv_detail_page.dart';
 import 'package:ditonton/presentation/pages/movie/movie_detail_page.dart';
@@ -68,6 +73,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => di.locator<PopularMoviesBloc>()),
         BlocProvider(create: (_) => di.locator<TopRatedMoviesBloc>()),
         BlocProvider(create: (_) => di.locator<WatchlistMovieBloc>()),
+        BlocProvider(create: (_) => di.locator<AiringTodayTvsBloc>()),
+        BlocProvider(create: (_) => di.locator<OnTheAirTvsBloc>()),
+        BlocProvider(create: (_) => di.locator<PopularTvsBloc>()),
+        BlocProvider(create: (_) => di.locator<TopRatedTvsBloc>()),
+        BlocProvider(create: (_) => di.locator<WatchlistTvBloc>()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

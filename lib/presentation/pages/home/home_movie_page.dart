@@ -1,3 +1,4 @@
+import 'package:ditonton/presentation/bloc/movie/movie_list_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/home/body_home_movie.dart';
 import 'package:ditonton/presentation/pages/home/body_home_tv.dart';
@@ -6,7 +7,6 @@ import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/watchlist_tvs_page.dart';
 import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/provider/home_notifier.dart';
-import 'package:ditonton/presentation/provider/movie/movie_list_notifier.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,19 +22,17 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
     super.initState();
 
     Future.microtask(() {
+      context.read<MovieListBloc>().add(FetchNowPlayingMovies());
+      context.read<MovieListBloc>().add(FetchPopularMovies());
+      context.read<MovieListBloc>().add(FetchTopRatedMovies());
+
       final tvProvider = context.read<TvListNotifier>();
-      final movieProvider = context.read<MovieListNotifier>();
 
       tvProvider
         ..fetchAiringTodayTvs()
         ..fetchOnTheAirTvs()
         ..fetchPopularTvs()
         ..fetchTopRatedTvs();
-
-      movieProvider
-        ..fetchNowPlayingMovies()
-        ..fetchPopularMovies()
-        ..fetchTopRatedMovies();
     });
   }
 

@@ -2,6 +2,7 @@
 
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/utils.dart';
+import 'package:ditonton/data/datasources/ssl_pinned_client.dart';
 import 'package:ditonton/firebase_options.dart';
 import 'package:ditonton/presentation/bloc/home_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
@@ -42,11 +43,13 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await HttpSSL.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  analytics.logEvent(name: "app_launched");
 
   di.init();
   await di.locator.allReady();

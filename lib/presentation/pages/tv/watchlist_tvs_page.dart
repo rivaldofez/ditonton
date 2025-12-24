@@ -52,14 +52,12 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
                 itemCount: state.result.length,
               );
             } else if (state is WatchlistTvError) {
-              return Expanded(
-                child: Center(
-                  child: Text(state.message),
-                ),
+              return Center(
+                child: Text(state.message),
               );
             } else {
-              return Expanded(
-                child: Container(),
+              return const Center(
+                child: Text('No watchlist movies'),
               );
             }
           },

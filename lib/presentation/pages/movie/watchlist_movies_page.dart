@@ -53,14 +53,12 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
                 itemCount: state.result.length,
               );
             } else if (state is WatchlistMovieError) {
-              return Expanded(
-                child: Center(
-                  child: Text(state.message),
-                ),
+              return Center(
+                child: Text(state.message),
               );
             } else {
-              return Expanded(
-                child: Container(),
+              return const Center(
+                child: Text('No watchlist movies'),
               );
             }
           },
